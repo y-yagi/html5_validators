@@ -8,6 +8,7 @@ require 'bundler/setup'
 Bundler.require
 require 'capybara'
 require "selenium/webdriver"
+require "chromedriver-helper"
 
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(chrome_options: {args: ['headless', 'disable-gpu', 'no-sandbox']}))
