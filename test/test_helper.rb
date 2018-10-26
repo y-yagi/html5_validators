@@ -10,10 +10,7 @@ require 'capybara'
 require "selenium/webdriver"
 require "chromedriver-helper"
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(chrome_options: {args: ['headless', 'disable-gpu', 'no-sandbox']}))
-end
-Capybara.default_driver = :selenium
+Capybara.default_driver = :selenium_chrome_headless
 
 # needs to load the app before loading rspec/rails => capybara
 require 'fake_app'
