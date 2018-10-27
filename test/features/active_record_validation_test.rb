@@ -3,6 +3,10 @@
 require 'test_helper'
 
 class ActiveRecordValidationTest < ActionDispatch::IntegrationTest
+  setup do
+    Capybara.use_default_driver
+  end
+
   teardown do
     Person._validators.clear
   end

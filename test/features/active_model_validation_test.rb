@@ -3,6 +3,10 @@
 require 'test_helper'
 
 class ActiveModelValidationTest < ActionDispatch::IntegrationTest
+  setup do
+    Capybara.use_default_driver
+  end
+
   teardown do
     Item._validators.clear
   end
